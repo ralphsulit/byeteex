@@ -7,14 +7,14 @@ import Image from 'next/image';
 // Custom imports
 import svgIcon from '../public/icon.svg';
 import config from '@/pages/config';
-import Images from './Images';
-import FeatureItem from './FeatureItem';
 
-// Datas
+import { Images, FeatureItem } from '.';
+import { featureStyles, imageContainerStyles } from '@/assets/customStyles';
+
+// Data
 import imageData from '@/lib/imageData';
 import featureData from '@/lib/featureData';
 
-import { featureStyles, imageContainerStyles } from '@/assets/customStyles';
 
 
 const Header = () => {
