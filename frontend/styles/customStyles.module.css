@@ -1,7 +1,9 @@
 /*****************
   Header Styles
 *****************/
-
+/*********
+Images
+**********/
 .image-container-0 {
   width: 102px;
   height: 190px;
@@ -37,4 +39,21 @@
   margin-top: 60px;
   margin-left: -20px;
   z-index: -1;
+}
+
+/*********
+Features
+**********/
+.header-feature {
+  font-size: 13px;
+  line-height: 18px;
+  letter-spacing: 0.39px;
+  display: flex;
+  align-items: center;
+  width: 322px;
+  margin-bottom: 26px;
+}
+
+.header-feature-img1 {
+  margin-right: 13px
 }
