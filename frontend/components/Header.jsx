@@ -8,7 +8,7 @@ import Image from 'next/image';
 import svgIcon from '../public/icon.svg';
 import config from '@/pages/config';
 
-import { Images, FeatureItem } from '.';
+import { Images, FeatureItem, Button } from '.';
 import { featureStyles, imageContainerStyles } from '@/assets/customStyles';
 
 // Data
@@ -21,6 +21,8 @@ const Header = () => {
   const { images, loading: imageLoading, error: imageError } = imageData();
 
   const { features, loading: featureLoading, error: featureError } = featureData();
+  // Used slice to display the first three items
+  const headerFeatures = features.slice(0, 3);
 
   if (imageLoading || featureLoading) {
     return <p>Loading...</p>;
@@ -72,13 +74,22 @@ const Header = () => {
           <span className={imageContainerStyles[4]}></span>
         </div>
         <div className='subheading-container mt-6'>
-          {features.map((feature) => (
+          {headerFeatures.map((feature) => (
             <FeatureItem
               key={feature.id}
               feature={feature} 
               className={`text-gray ${featureStyles[0]}`}
             />
           ))}
+
+          <Button
+            title='Customize Your Outfit' 
+            className={`flex justify-around bg-blue text-white text-center pt-4 pb-5 px-14 rounded-md`}
+            imgSrc='/Vector.svg'
+            imgAlt='Custom arrow'
+            imgWidth={23}
+            imgHeight={23}
+          />
         </div>
       </header>
 
