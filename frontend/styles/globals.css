@@ -11,3 +11,10 @@
 body {
   height: 100%;
 }
+
+@layer base {
+  img, svg, video, canvas, audio, iframe, embed, object {
+    display: inline-block;
+    vertical-align: baseline;
+  }
+}

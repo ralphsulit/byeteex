@@ -3,6 +3,7 @@ import Images from "./Images";
 import FeatureItem from "./FeatureItem";
 import Button from './Button';
 import ReviewCard from "./ReviewCard";
+import Feature from "./Feature";
 
 export {
   Header,
@@ -10,4 +11,5 @@ export {
   FeatureItem,
   Button,
   ReviewCard,
+  Feature
 }
