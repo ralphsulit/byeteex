@@ -1,6 +1,3 @@
-// React Imports
-import React from 'react';
-
 // Next imports
 import Image from 'next/image';
 
@@ -8,31 +5,35 @@ import Image from 'next/image';
 import svgIcon from '../public/icon.svg';
 import config from '@/pages/config';
 
-import { Images, FeatureItem, Button } from '.';
+import { Images, FeatureItem, Button, ReviewCard } from '.';
 import { featureStyles, imageContainerStyles } from '@/assets/customStyles';
 
 // Data
 import imageData from '@/lib/imageData';
 import featureData from '@/lib/featureData';
-
-
+import reviewData from '@/lib/reviewData';
 
 const Header = () => {
+  const { reviews, loading: reviewLoading, error: reviewError } = reviewData();
   const { images, loading: imageLoading, error: imageError } = imageData();
-
   const { features, loading: featureLoading, error: featureError } = featureData();
+
+  console.log(reviews)
+
   // Used slice to display the first three items
   const headerFeatures = features.slice(0, 3);
 
-  if (imageLoading || featureLoading) {
+  if (imageLoading || featureLoading ||reviewLoading) {
     return <p>Loading...</p>;
   }
 
-  if (imageError || featureError) {
+  if (imageError || featureError || reviewError) {
     return (
       <p>
-        Error fetching data: {imageError && imageError.message} 
+        Error fetching data:
+        {imageError && imageError.message} 
         {featureError && featureError.message}
+        {reviewError && reviewError.message}
       </p>
     );
   }
@@ -58,7 +59,7 @@ const Header = () => {
             {`Don’t`} apologize for being comfortable.
           </h1>
         </div>
-        <div className="image-container flex mt-5 px-6 md:order-2">
+        <div className="image-container w-80 flex mt-5 px-6 md:order-2">
           <span className={imageContainerStyles[3]}></span>
           {/* Created an Image Component to apply separate styles for each image 
           and to render images fetched from the API.  */}
@@ -90,6 +91,17 @@ const Header = () => {
             imgWidth={23}
             imgHeight={23}
           />
+        </div>
+        <div className='review-card-container my-6'>
+          {reviews.map((review) => (
+            <ReviewCard 
+              key={review.id}
+              review={review}
+              span='One of 500+ 5 Star Reviews Online'
+            />
+          ))
+            
+          }
         </div>
       </header>
 

@@ -37,3 +37,22 @@ export const fetchFeature = async () => {
     throw error;
   }
 };
+
+export const fetchReview = async () => {
+  const apiUrl = `${config.apiEndpoint}/api/feedbacks?populate=*`;
+
+  const reqOptions = {
+    headers: {
+      Authorization: `Bearer ${config.apiToken}`,
+    },
+  };
+
+  try {
+    const request = await fetch(apiUrl, reqOptions);
+    const response = await request.json();
+    return response;
+  } catch (error) {
+    console.error('Error:', error);
+    throw error;
+  }
+};
