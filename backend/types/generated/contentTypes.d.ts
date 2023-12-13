@@ -784,6 +784,36 @@ export interface ApiImageImage extends Schema.CollectionType {
   };
 }
 
+export interface ApiPartnerPartner extends Schema.CollectionType {
+  collectionName: 'partners';
+  info: {
+    singularName: 'partner';
+    pluralName: 'partners';
+    displayName: 'Partner';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Company: Attribute.Media & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::partner.partner',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::partner.partner',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiProductProduct extends Schema.SingleType {
   collectionName: 'products';
   info: {
@@ -833,6 +863,7 @@ declare module '@strapi/types' {
       'api::feature.feature': ApiFeatureFeature;
       'api::feedback.feedback': ApiFeedbackFeedback;
       'api::image.image': ApiImageImage;
+      'api::partner.partner': ApiPartnerPartner;
       'api::product.product': ApiProductProduct;
     }
   }

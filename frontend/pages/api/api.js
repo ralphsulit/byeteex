@@ -56,3 +56,22 @@ export const fetchReview = async () => {
     throw error;
   }
 };
+
+export const fetchPartner = async () => {
+  const apiUrl = `${config.apiEndpoint}/api/partners?populate=*`;
+
+  const reqOptions = {
+    headers: {
+      Authorization: `Bearer ${config.apiToken}`
+    },
+  };
+
+  try {
+    const request = await fetch(apiUrl, reqOptions);
+    const response = await request.json();
+    return response;
+  } catch (error) {
+    console.error('Error:', error);
+    throw error;
+  }
+};
