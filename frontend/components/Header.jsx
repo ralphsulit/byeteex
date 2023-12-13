@@ -5,7 +5,7 @@ import Image from 'next/image';
 import svgIcon from '../public/icon.svg';
 import config from '@/pages/config';
 
-import { Images, FeatureItem, Button, ReviewCard } from '.';
+import { Images, FeatureItem, Button, ReviewCard, Loader } from '.';
 import { featureStyles, imageContainerStyles } from '@/assets/customStyles';
 
 // Data
@@ -18,28 +18,11 @@ const Header = () => {
   const { images, loading: imageLoading, error: imageError } = imageData();
   const { features, loading: featureLoading, error: featureError } = featureData();
 
-
-
   // Used slice to display the first three items
   const headerFeatures = features.slice(0, 3);
 
-  if (imageLoading || featureLoading ||reviewLoading) {
-    return <p>Loading...</p>;
-  }
-
-  if (imageError || featureError || reviewError) {
-    return (
-      <p>
-        Error fetching data:
-        {imageError && imageError.message} 
-        {featureError && featureError.message}
-        {reviewError && reviewError.message}
-      </p>
-    );
-  }
-
   return (
-    <>
+    <Loader loading={imageLoading || featureLoading || reviewLoading} error={imageError || featureError || reviewError}>
       <span className='bg-[#f9f0e5] text-[#565656] text-xs w-full text-center h-9 flex items-center justify-center '>
         <span className='hidden md:block mr-2'>CONSCIOUSLY MADE BUTTER SOFT STAPLES FOR EVERY DAY (OR NIGHT)<span className='mx-2'>|</span></span>
         FREE SHIPPING on orders {`>`} $200
@@ -109,7 +92,7 @@ const Header = () => {
           ))}
         </div>
       </header>
-    </>
+    </Loader>
   );
 };
 
