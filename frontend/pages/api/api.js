@@ -92,5 +92,5 @@ export const fetchAbout = async () => {
   } catch (error) {
     console.error('Error:', error);
     throw error;
-  } 
-}
+  }
+};

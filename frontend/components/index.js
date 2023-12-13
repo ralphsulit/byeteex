@@ -4,6 +4,7 @@ import FeatureItem from "./FeatureItem";
 import Button from './Button';
 import ReviewCard from "./ReviewCard";
 import Feature from "./Feature";
+import About from './About';
 
 export {
   Header,
@@ -11,5 +12,6 @@ export {
   FeatureItem,
   Button,
   ReviewCard,
-  Feature
+  Feature,
+  About,
 }
