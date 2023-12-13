@@ -699,6 +699,7 @@ export interface ApiAboutAbout extends Schema.CollectionType {
       Attribute.SetMinMaxLength<{
         maxLength: 999;
       }>;
+    Images: Attribute.Media & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
