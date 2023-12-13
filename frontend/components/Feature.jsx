@@ -14,6 +14,7 @@ const Feature = () => {
   
   // Used slice to display the last 4 items
   const headerFeatures = features.slice(-4);
+  
   if (loading) {
     return <p>Loading...</p>;
   }
@@ -87,13 +88,13 @@ const Feature = () => {
           imgWidth={23}
           imgHeight={23}
         />
-        <span className='flex justify-center items-center gap-3 pt-2'>
+        <span className='flex justify-center items-center gap-3 pt-2 pb-[43px]'>
           <img src='/stars.svg' width={60} height={9.683} alt='stars' />
-          <p className='text-[12px] text-gray-2 leading-5'>One of 500+ 5 Star Reviews Online</p>
+          <p className='text-[12px] text-gray-2 leading-5'>
+            One of 500+ 5 Star Reviews Online
+          </p>
         </span>
-        
       </div>
-      
     </section>
   )
 }

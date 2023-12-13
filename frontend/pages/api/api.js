@@ -75,3 +75,22 @@ export const fetchPartner = async () => {
     throw error;
   }
 };
+
+export const fetchAbout = async () => {
+  const apiUrl = `${config.apiEndpoint}/api/abouts?populate=*`;
+
+  const reqOptions = {
+    headers: {
+      Authorization: `Bearer ${config.apiToken}`
+    },
+  };
+
+  try {
+    const request = await fetch(apiUrl, reqOptions);
+    const response = await request.json();
+    return response;
+  } catch (error) {
+    console.error('Error:', error);
+    throw error;
+  }
+};
