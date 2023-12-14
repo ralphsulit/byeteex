@@ -1,8 +1,8 @@
 import React from 'react'
 import config from '@/pages/config';
 
-const ReviewCard = ({ review, span }) => {
-  const { Name, Avatar, Comment } = review.attributes
+const ReviewCard = ({ review, span, description }) => {
+  const { Name, Avatar } = review.attributes
 
   return (
     <div className='border border-zinc-100 rounded-lg shadow-xl px-1 py-4'>
@@ -21,7 +21,7 @@ const ReviewCard = ({ review, span }) => {
           <h1 className='text-gray'>{Name}</h1>
         </div>
       </div>
-      <p className='text-gray text-xs leading-6 mt-2 w-80 pl-3'>{Comment}</p>
+      <p className='text-gray text-xs leading-6 mt-2 w-80 pl-3'>{description}</p>
     </div>
   )
 }

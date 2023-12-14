@@ -88,6 +88,7 @@ const Header = () => {
               key={review.id}
               review={review}
               span='One of 500+ 5 Star Reviews Online'
+              description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed sollicitudin dolor, non sodales justo.'
             />
           ))}
         </div>
