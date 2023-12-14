@@ -3,7 +3,7 @@ import { ProductCard, Button } from '.'
 
 const ProductInfo = () => {
   return (
-    <div className='flex flex-col items-center justify-center py-10 px-14 bg-red'>
+    <div className='flex flex-col items-center justify-center py-10 bg-red'>
       <h1 className='text-blue text-[26px]'>Comfort made easy</h1>
       <div>
         <ProductCard
@@ -29,6 +29,17 @@ const ProductInfo = () => {
           One of 500+ 5 Star Reviews Online
         </p>
       </span>
+
+      <h1 className='text-blue text-[26px]'>What are our fans saying?</h1>
+      <p className='text-center text-gray leading-[23px] tracking-[0.45px] text-[15px] w-[23rem] mt-4'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lobortis sapien facilisis tincidunt pellentesque. In eget ipsum et felis finibus consequat. Fusce non nibh luctus.</p>
+
+      <div className='grid grid-cols-4 gap-1 px-2 mt-10 md:grid-cols-6 lg:grid-cols-11'>
+        {[...Array(22)].map((_, index) => (
+          <div key={index} className={`${index >= 8 ? 'hidden md:block' : ''}  ${index >= 12 ? 'md:hidden lg:block' : ''}`}>
+            <img className="w-full" src='./img/img3.png' alt={`Image ${index + 1}`} />
+          </div>
+        ))}
+      </div>
 
     </div>
   )
