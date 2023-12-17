@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "features",
+  "info": {
+    "singularName": "feature",
+    "pluralName": "features",
+    "displayName": "features",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Description": {
+      "type": "text",
+      "required": true,
+      "maxLength": 255
+    },
+    "Title": {
+      "type": "string"
+    },
+    "Icon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

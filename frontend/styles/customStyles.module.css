@@ -1,0 +1,63 @@
+/*****************
+  Header Styles
+*****************/
+/*********
+Images
+**********/
+.image-container-0 {
+  width: 102px;
+  height: 190px;
+  margin-top: 17px;
+  
+}
+
+.image-container-1 {
+  width: 148.856px;
+  height: 224.484px;
+  padding: 0 2px;
+}
+
+.image-container-2 {
+  width: 102px;
+  height: 190px;
+  margin-top: 17px;
+}
+
+.span-1 {
+  background: linear-gradient(180deg, rgba(249, 240, 229, 0.70) 0%, rgba(249, 240, 229, 0.22) 100%);
+  width: 70.248px;
+  height: 99.082px;
+  margin-top: 60px;
+  margin-right: -20px;
+  z-index: -1;
+}
+
+.span-2 {
+  background: linear-gradient(180deg, rgba(249, 240, 229, 0.70) 0%, rgba(249, 240, 229, 0.22) 100%);
+  width: 70.248px;
+  height: 99.082px;
+  margin-top: 60px;
+  margin-left: -20px;
+  z-index: -1;
+}
+
+/*********
+Features
+**********/
+.header-feature {
+  font-size: 13px;
+  line-height: 18px;
+  letter-spacing: 0.39px;
+  display: flex;
+  align-items: center;
+  width: 322px;
+}
+
+.header-feature-img1 {
+  margin-right: 13px
+}
+
+/*********
+Review Card
+**********/
+

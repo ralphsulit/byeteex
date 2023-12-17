@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "feedbacks",
+  "info": {
+    "singularName": "feedback",
+    "pluralName": "feedbacks",
+    "displayName": "Feedback"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true,
+      "maxLength": 255
+    },
+    "Avatar": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "Comment": {
+      "type": "text",
+      "required": true,
+      "maxLength": 255
+    }
+  }
+}
