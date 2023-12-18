@@ -1,0 +1,23 @@
+{
+  "name": "byeteex",
+  "version": "1.0.0",
+  "description": "Exam Task",
+  "main": "index.js", 
+  "scripts": {
+    "start": "next start", 
+    "build": "next build"
+  },
+  "dependencies": {
+
+  },
+  "devDependencies": {
+
+  },
+  "engines": {
+    "node": ">=14"  
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ralphsulit/byeteex" 
+  }
+}
